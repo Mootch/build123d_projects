@@ -1,5 +1,8 @@
+# %%
 from build123d import *
+from ocp_vscode import *
 
+# %%
 phone_x, phone_y, phone_z = 73, 153, 9.3
 corner_r, edge_r, cut_r = 11, 3, 1
 thickness = 2
@@ -13,6 +16,7 @@ logo_scale = 30
 logo = import_svg("Boston_Bruins-svg.svg")
 scaled_logo = scale(logo, by=logo_scale/max(Compound(logo).bounding_box().size))
 
+# %%
 with BuildPart() as phonecase:
     Box(phone_x, phone_y, phone_z)
     fillet(phonecase.edges().filter_by(Axis.Z), corner_r)
@@ -57,3 +61,6 @@ with BuildPart() as phonecase:
     with BuildSketch(Plane(origin=(0,-phone_y/4,-phone_z/2), x_dir=(-1,0,0), z_dir=(0,0,-1))) as logo_plane:
         add(scaled_logo.moved(Location(-scaled_logo.center(CenterOf.BOUNDING_BOX))))
     extrude(amount=thickness, mode=Mode.SUBTRACT)                                                   # cut logo
+
+show(phonecase)
+# %%
