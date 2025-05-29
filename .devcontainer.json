@@ -20,8 +20,7 @@
 			"extensions": [
                 "bernhard-42.ocp-cad-viewer",
                 "ms-python.python",
-                "ms-python.pylint",
-				"ms-toolsai.jupyter"
+		"ms-toolsai.jupyter"
 			]
 		}
 	},
@@ -40,7 +39,7 @@
 	},
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"onCreateCommand": "python3 -m pip install build123d ipykernel ocp_tessellate ocp_vscode"
+	"onCreateCommand": "python3 -m pip install build123d ocp_vscode"
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
