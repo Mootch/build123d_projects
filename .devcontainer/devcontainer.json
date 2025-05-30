@@ -10,5 +10,5 @@
 			"extensions": ["ms-python.python","ms-toolsai.jupyter","bernhard-42.ocp-cad-viewer"]
 		}
 	},
-	"onCreateCommand": "python3 -m pip install build123d ocp_vscode jupyter_cadquery"
+	"onCreateCommand": "python3 -m pip install build123d ocp_vscode jupyter-cadquery"
 }
