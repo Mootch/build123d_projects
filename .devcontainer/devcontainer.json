@@ -7,7 +7,14 @@
 	},
 	"customizations": {
 		"vscode": {
-			"extensions": ["ms-python.python","ms-toolsai.jupyter","bernhard-42.ocp-cad-viewer"]
+			"extensions": ["ms-python.python","ms-toolsai.jupyter","bernhard-42.ocp-cad-viewer"],
+			"settings": {
+				"OcpCadViewer.view.orbit_control": true,
+    				"OcpCadViewer.view.axes": true,
+    				"OcpCadViewer.advanced.autostart": false,
+    				"OcpCadViewer.advanced.autohideTerminal": true,
+    				"OcpCadViewer.view.reset_camera": "KEEP"
+			}
 		}
 	},
 	"onCreateCommand": "python3 -m pip install build123d ocp_vscode jupyter-cadquery"
