@@ -1,0 +1,7 @@
+{
+    "OcpCadViewer.view.orbit_control": true,
+    "OcpCadViewer.view.axes": true,
+    "OcpCadViewer.advanced.autostart": false,
+    "OcpCadViewer.advanced.autohideTerminal": true,
+    "OcpCadViewer.view.reset_camera": "KEEP"
+}
