@@ -1,8 +1,12 @@
 {
-	"image": "mcr.microsoft.com/devcontainers/universal:2",
+	"image": "mcr.microsoft.com/devcontainers/python:3.12",
 	"features": {
 		"ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
 			"packages": "libgl1"
+		},
+		"ghcr.io/devcontainers/features/python:1": {
+			"installTools": false,
+			"installJupyterlab": true
 		}
 	},
 	"customizations": {
@@ -17,5 +21,6 @@
 			}
 		}
 	},
-	"onCreateCommand": "python3 -m pip install build123d ocp_vscode jupyter-cadquery"
+	"postCreateCommand": "sudo python3 -m pip install build123d ocp_vscode jupyter-cadquery",
+	"remoteUser": "vscode"
 }
