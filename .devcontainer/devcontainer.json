@@ -4,10 +4,7 @@
 		"ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
 			"packages": "libgl1"
 		},
-		"ghcr.io/devcontainers/features/python:1": {
-			"installTools": false,
-			"installJupyterlab": true
-		}
+		"ghcr.io/devcontainers/features/python:1": {"installJupyterlab": true}
 	},
 	"customizations": {
 		"vscode": {
@@ -21,6 +18,5 @@
 			}
 		}
 	},
-	"postCreateCommand": "sudo python3 -m pip install build123d ocp_vscode jupyter-cadquery",
-	"remoteUser": "vscode"
+	"onCreateCommand": "python3 -m pip install build123d ocp_vscode jupyter-cadquery"
 }
