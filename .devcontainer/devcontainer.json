@@ -23,5 +23,5 @@
 			}
 		}
 	},
-	"onCreateCommand": "python3 -m pip install build123d ocp_vscode jupyter-cadquery"
+	"onCreateCommand": "python3 -m pip install build123d ocp_vscode jupyter-cadquery git+https://github.com/gumyr/bd_warehouse"
 }
