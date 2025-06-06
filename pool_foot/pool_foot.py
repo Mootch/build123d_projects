@@ -15,3 +15,32 @@ with BuildPart() as foot:
     Cylinder(5/2, 5, mode=Mode.SUBTRACT, align=(Align.CENTER, Align.CENTER, Align.MAX))
 
 show(foot, reset_camera=Camera.KEEP)
+
+# %%
+with BuildSketch() as drawing:
+    border = TechnicalDrawing(designed_by="Andy",
+                              title="POOL FOOT",
+                              sub_title="")
+    page_size = border.bounding_box().size
+
+    vis, hid = foot.part.project_to_viewport((10, -10, 10))
+    with BuildLine() as part_view:
+        with Locations(0.25*page_size):
+            add(vis)
+    
+    vis, hid = foot.part.project_to_viewport((0,0,1000), (0,1,0))
+    with BuildLine() as top_view:
+        with Locations((-0.2*page_size.X, 0.25*page_size.Y)):
+            add(vis)
+
+    vis, hid = foot.part.project_to_viewport((0,-1000,0), (0,0,1))
+    with BuildLine() as front_view:
+        with Locations((-0.2*page_size.X, -0.1*page_size.Y)):
+            add(vis)
+          
+    vis, hid = foot.part.split(Plane.XZ, Keep.BOTTOM).project_to_viewport((0,-1000,0), (0,0,1))
+    with BuildLine() as section_view:
+        with Locations((0.2*page_size.X, -0.1*page_size.Y)):
+            add(vis)
+
+show(drawing, part_view, top_view, front_view, section_view)
