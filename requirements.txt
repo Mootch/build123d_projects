@@ -1,3 +1,4 @@
 nbgitpuller
 build123d
 jupyter-cadquery
+git+https://github.com/gumyr/bd_warehouse
